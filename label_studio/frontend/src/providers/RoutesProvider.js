@@ -79,6 +79,28 @@ export const RoutesProvider = ({children}) => {
     console.log("Location changed");
     const ContextComponent = lastRoute?.context;
 
+    // WARNING - The code below must be removed when we know how to change the frontend in the correct way.
+    const AUDIO_INJECTION_TIMEOUT = 3000
+    setTimeout(() => {
+      console.log('Inject audio control')
+      let wav = document.querySelector("#wave")
+    
+      if(wav){
+        function my_key(e) {
+          let audioTag = document.querySelector("#wave>audio")
+          let time = 0.5
+          if (e.key === 'ArrowLeft') {
+            audioTag.currentTime -= time
+          }
+          if (e.key === 'ArrowRight') {
+            audioTag.currentTime += time
+          }
+        }
+        document.removeEventListener('keyup', my_key, false);
+        document.addEventListener('keyup', my_key, false);
+      }
+    }, AUDIO_INJECTION_TIMEOUT)
+
     setCurrentContext({
       component: ContextComponent ?? null,
       props: currentContextProps,
