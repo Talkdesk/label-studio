@@ -1,0 +1,12 @@
+Build phase:
+    stages:
+      build image:
+        when:
+          - master
+          - ^(v[0-9]+\.[0-9]+\.[0-9]+(-.+)?)$
+        type: docker_build
+
+      Docker push:
+        when:
+          - ^(v[0-9]+\.[0-9]+\.[0-9]+(-.+)?)$
+        type: docker_push

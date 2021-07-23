@@ -1,5 +1,5 @@
 # Building the main container
-FROM ubuntu:20.04
+FROM hub.talkdeskapp.com/ubuntu:20.04
 
 WORKDIR /label-studio
 
