@@ -41,7 +41,7 @@ requests>=2.22.0,<3
 rq==1.7.0
 rules==2.2
 ujson>=3.0.0
-xmljson==0.2.0
+xmljson==0.2.1
 colorama>=0.4.4
 boxing>=0.1.4
 redis>=3.5.0
