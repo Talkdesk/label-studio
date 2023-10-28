@@ -39,7 +39,7 @@ python_dateutil==2.8.1
 pytz==2019.3
 requests>=2.22.0,<3
 rq==1.7.0
-rules==2.2
+rules==3.3
 ujson>=3.0.0
 xmljson==0.2.0
 colorama>=0.4.4
